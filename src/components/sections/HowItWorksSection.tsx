@@ -8,7 +8,7 @@ export function HowItWorksSection() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      className="border-y border-border/60 bg-muted/20 py-20 sm:py-28"
+      className="dot-grid-bg border-y border-border/60 bg-muted/20 py-20 sm:py-28"
     >
       <Container>
         <div className="mx-auto max-w-2xl text-center">

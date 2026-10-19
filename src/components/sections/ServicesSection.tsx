@@ -12,7 +12,7 @@ const iconMap = {
 
 export function ServicesSection() {
   return (
-    <section aria-labelledby="services-heading" className="py-20 sm:py-28">
+    <section aria-labelledby="services-heading" className="dot-grid-bg py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>

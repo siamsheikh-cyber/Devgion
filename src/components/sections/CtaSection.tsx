@@ -6,7 +6,7 @@ import { finalCtaData } from "@/data/homepage";
 
 export function CtaSection() {
   return (
-    <section aria-labelledby="cta-heading" className="py-20 sm:py-28">
+    <section aria-labelledby="cta-heading" className="dot-grid-bg py-20 sm:py-28">
       <Container>
         <FadeIn>
           <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card px-6 py-16 sm:px-12 sm:py-20 md:px-16 text-center shadow-xl">

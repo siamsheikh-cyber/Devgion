@@ -283,7 +283,7 @@ export function ProjectModal({ project }: ProjectModalProps) {
             <Link
               href="/contact"
               onClick={handleClose}
-              className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary via-indigo-600 to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <span>Get a free 7-day test</span>
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />

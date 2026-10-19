@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 
 export function WorkSection() {
   return (
-    <section id="work" aria-labelledby="work-heading" className="py-20 sm:py-28 relative">
+    <section id="work" aria-labelledby="work-heading" className="dot-grid-bg py-20 sm:py-28 relative">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>
@@ -20,7 +20,7 @@ export function WorkSection() {
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
               Recent{" "}
-              <span className="bg-gradient-to-r from-primary via-indigo-500 to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 work
               </span>
             </h2>

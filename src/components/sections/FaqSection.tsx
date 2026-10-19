@@ -5,7 +5,7 @@ import { faqData } from "@/data/homepage";
 
 export function FaqSection() {
   return (
-    <section aria-labelledby="faq-heading" className="py-20 sm:py-28">
+    <section aria-labelledby="faq-heading" className="dot-grid-bg py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>

@@ -13,7 +13,7 @@ export function ProblemSection() {
   return (
     <section
       aria-labelledby="problem-heading"
-      className="border-y border-border/60 bg-muted/30 py-16 sm:py-24"
+      className="dot-grid-bg border-y border-border/60 bg-muted/30 py-16 sm:py-24"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">

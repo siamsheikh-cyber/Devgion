@@ -153,7 +153,7 @@ export function PhoneFrame({
  */
 export function HeroMultiDeviceFrame() {
   const shouldReduceMotion = useReducedMotion();
-  const heroProject = projects.find((p) => p.slug === "vmv-catering") || projects[0];
+  const heroProject = projects.find((p) => p.slug === "restaurant-website") || projects[0];
 
   return (
     <div className="relative mx-auto w-full max-w-2xl lg:max-w-none">

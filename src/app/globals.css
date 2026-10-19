@@ -3,10 +3,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ============================================================
+   BRAND TOKENS
+   #3682FC = brand blue (from)
+   #776CF0 = brand purple (to)
+   Use var(--brand-from) / var(--brand-to) instead of hardcoding.
+   ============================================================ */
+:root,
+.dark {
+  --brand-from: #3682FC;
+  --brand-to:   #776CF0;
+}
+
+/* ============================================================
    THEME: CSS variables for light/dark mode
-   TODO: Refine palette before launch — ask designer to sign off.
-   The accent (primary) is a deep indigo/violet. Swap it here and
-   it propagates everywhere via Tailwind's custom property bridge.
    ============================================================ */
 
 :root {
@@ -31,22 +40,21 @@
   --popover: 0 0% 100%;
   --popover-foreground: 224 16% 10%;
 
-  /* Primary / Accent — deep indigo TODO: finalise brand color */
-  --primary: 243 75% 59%;
-  /* indigo-500 #6366f1 */
+  /* Primary — brand blue #3682FC → hsl(217 97% 60%) */
+  --primary: 217 97% 60%;
   --primary-foreground: 0 0% 100%;
-  /* white text on primary */
 
   --secondary: 220 14% 96%;
   --secondary-foreground: 224 16% 10%;
 
-  --accent: 243 75% 59%;
+  /* Accent — brand purple #776CF0 → hsl(247 82% 68%) */
+  --accent: 247 82% 68%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
-  --ring: 243 75% 59%;
+  --ring: 217 97% 60%;
   --radius: 0.5rem;
 }
 
@@ -68,20 +76,21 @@
   --popover: 224 16% 10%;
   --popover-foreground: 210 20% 93%;
 
-  --primary: 245 80% 68%;
-  /* slightly lighter indigo for dark bg */
+  /* Primary — brand blue, slightly lighter for dark bg */
+  --primary: 217 97% 65%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 224 16% 14%;
   --secondary-foreground: 210 20% 93%;
 
-  --accent: 245 80% 68%;
+  /* Accent — brand purple, slightly lighter for dark bg */
+  --accent: 247 82% 72%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 63% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --ring: 245 80% 68%;
+  --ring: 217 97% 65%;
 }
 
 /* ============================================================
@@ -183,4 +192,58 @@ h6 {
 /* Remove default button/input styles */
 button {
   cursor: pointer;
+}
+
+/* ============================================================
+   DOT-GRID BACKGROUND UTILITY
+   Used by every section below the hero.
+   Pure CSS radial-gradient pattern — zero weight, zero images.
+   Light mode: brand-blue dots at very low opacity.
+   Dark mode: slightly brighter to remain visible.
+   Mask fades the pattern toward all edges so it never clips.
+   ============================================================ */
+.dot-grid-bg {
+  position: relative;
+}
+
+.dot-grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* Dot pattern: 1.5px dot every 28px, brand blue at very low opacity */
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand-from) 18%, transparent) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 28px 28px;
+
+  /* Soft edge fade in all four directions */
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 85% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 85% 85% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+}
+
+.dark .dot-grid-bg::before {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand-from) 28%, transparent) 1.5px,
+    transparent 1.5px
+  );
+}
+
+/* Ensure content inside sits above the pseudo-element */
+.dot-grid-bg > * {
+  position: relative;
+  z-index: 1;
 }

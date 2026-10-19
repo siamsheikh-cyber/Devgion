@@ -53,10 +53,10 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="-ml-[25px] inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="-ml-[5px] inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Devgion — home"
         >
-          <Logo priority className="h-10 w-auto md:h-28" />
+          <Logo priority className="h-10 w-auto md:h-20" />
         </Link>
 
         {/* Desktop nav links */}
@@ -92,7 +92,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="group relative hidden items-center justify-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-primary via-indigo-600 to-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/25 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:inline-flex"
+            className="group relative hidden items-center justify-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/25 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:inline-flex"
           >
             {/* Soft shine sweep */}
             <span
@@ -149,7 +149,7 @@ export function Header() {
               <li className="mt-4 border-t border-border pt-4">
                 <Link
                   href="/contact"
-                  className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary via-indigo-600 to-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/25"
+                  className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/25"
                 >
                   <span
                     className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"
