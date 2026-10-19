@@ -141,7 +141,7 @@ export function HeroSection() {
             <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
               <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
               <span>
-                <CountUp to={18} duration={1.2} suffix="+" className="font-bold text-primary" /> websites built
+                <CountUp to={24} duration={1.2} suffix="+" className="font-bold text-primary" /> websites built
               </span>
             </div>
 
