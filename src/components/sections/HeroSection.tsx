@@ -15,10 +15,10 @@ export function HeroSection() {
   const scrollIndicatorOpacity = useTransform(scrollY, [0, 100], [1, 0]);
 
   const headingWords = [
-    { text: "Websites", gradient: false },
-    { text: "That", gradient: false },
-    { text: "Fill", gradient: true },
-    { text: "Tables.", gradient: true },
+    { text: "We design or redesign", gradient: false },
+    { text: "restaurant websites to bring in more orders", gradient: true },
+    { text: "", gradient: true },
+    { text: "and bookings.", gradient: false },
   ];
 
   return (
@@ -70,25 +70,11 @@ export function HeroSection() {
               id="hero-heading"
               className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-[1.08] sm:leading-[1.08]"
             >
-              {headingWords.map((word, index) => (
-                <motion.span
-                  key={word.text}
-                  initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: shouldReduceMotion ? 0 : 0.08 * index,
-                    ease: [0.21, 0.47, 0.32, 0.98],
-                  }}
-                  className={`inline-block mr-2.5 sm:mr-3.5 ${
-                    word.gradient
-                      ? "bg-gradient-to-r from-primary via-indigo-500 to-accent bg-clip-text text-transparent"
-                      : "text-foreground"
-                  }`}
-                >
-                  {word.text}
-                </motion.span>
-              ))}
+              We design or redesign{" "}
+              <span className="box-decoration-clone bg-gradient-to-r from-primary via-indigo-500 to-accent bg-clip-text text-transparent">
+                restaurant websites
+              </span>{" "}
+              to bring in more orders and bookings.
             </h1>
 
             {/* Subheading */}
@@ -209,8 +195,8 @@ export function HeroSection() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, 8, 0],
-                    }
+                    y: [0, 8, 0],
+                  }
               }
               transition={{
                 duration: 1.6,

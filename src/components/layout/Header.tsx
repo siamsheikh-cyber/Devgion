@@ -53,7 +53,7 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="-ml-[25px] inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Devgion — home"
         >
           <Logo priority className="h-10 w-auto md:h-28" />

@@ -3,7 +3,7 @@ import type { ProblemPoint, TestStep, WhyPoint, FaqItem } from "@/types";
 export const heroData = {
   heading: "Websites That Fill Tables.",
   subheading:
-    "We design and redesign restaurant and cafe websites so guests can find your menu, book a table and order in a few taps.",
+    "We combine beautiful design with how people make decisions, so guests find your menu, trust what they see, and order or book in a few taps.",
   primaryCta: {
     label: "Get a free 7-day test",
     href: "/contact",
