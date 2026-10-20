@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
 import { BrowserFrame } from "@/components/ui/MockupFrame";
 import { cn } from "@/lib/utils";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 
 interface ProjectCardProps {
   project: Project;
@@ -105,11 +106,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           scroll={false}
           className="group/btn relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-border/80 bg-background/80 py-2.5 px-4 text-xs font-semibold text-foreground backdrop-blur-xs shadow-xs transition-all duration-300 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          {/* Shine sweep overlay */}
-          <span
-            className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover/btn:translate-x-full"
-            aria-hidden="true"
-          />
+          <ButtonShine variant="secondary" />
           <span>See details</span>
           <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
         </Link>

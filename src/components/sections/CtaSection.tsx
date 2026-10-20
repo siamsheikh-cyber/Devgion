@@ -2,11 +2,16 @@ import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { finalCtaData } from "@/data/homepage";
+import { ButtonShine } from "@/components/ui/ButtonShine";
+
+const heading = "Send us your restaurant's website.";
+const subheading = "We will tell you honestly what we would fix first.";
+const buttonText = "Get a Free Audit";
+const buttonHref = "/contact";
 
 export function CtaSection() {
   return (
-    <section aria-labelledby="cta-heading" className="dot-grid-bg py-20 sm:py-28">
+    <section aria-labelledby="cta-heading" className="py-15 sm:py-28">
       <Container>
         <FadeIn>
           <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card px-6 py-16 sm:px-12 sm:py-20 md:px-16 text-center shadow-xl">
@@ -26,19 +31,20 @@ export function CtaSection() {
                 id="cta-heading"
                 className="mt-6 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
               >
-                {finalCtaData.heading}
+                {heading}
               </h2>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {finalCtaData.subheading}
+                {subheading}
               </p>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href={finalCtaData.buttonHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg transition-all duration-200 hover:bg-primary/90 hover:shadow-primary/25 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  href={buttonHref}
+                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3D78FB] to-[#7555EE] px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <span>{finalCtaData.buttonText}</span>
+                  <ButtonShine />
+                  <span>{buttonText}</span>
                   <ArrowRight className="size-4" />
                 </Link>
               </div>

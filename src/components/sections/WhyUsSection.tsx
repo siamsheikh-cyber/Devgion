@@ -1,7 +1,8 @@
 import { Utensils, CheckCircle2, Zap, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { whyUsData } from "@/data/homepage";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import type { WhyPoint } from "@/types";
 
 const iconMap = {
   Utensils,
@@ -10,29 +11,56 @@ const iconMap = {
   ShieldCheck,
 };
 
+const heading = "Why restaurants choose us";
+
+const points: WhyPoint[] = [
+  {
+    title: "Restaurants and cafes only",
+    description:
+      "Restaurants and cafes only, so we know what guests look for when they're hungry and ready to book.",
+    icon: "Utensils",
+  },
+  {
+    title: "Actions guests see first",
+    description:
+      "Every layout puts order, reserve and call actions where guests see them first.",
+    icon: "CheckCircle2",
+  },
+  {
+    title: "Mobile-first and fast",
+    description:
+      "Mobile-first and fast, ensuring zero friction for guests browsing on the go.",
+    icon: "Zap",
+  },
+  {
+    title: "Simple, honest process",
+    description:
+      "A simple, honest process with no lock-in. Clear communication from day one.",
+    icon: "ShieldCheck",
+  },
+];
+
 export function WhyUsSection() {
   return (
     <section
       aria-labelledby="why-us-heading"
-      className="dot-grid-bg border-y border-border/60 bg-muted/20 py-20 sm:py-28"
+      className="py-15 sm:py-28"
     >
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>
-            <span className="font-heading text-xs font-bold uppercase tracking-wider text-primary">
-              The Devgion Advantage
-            </span>
+            <SectionLabel>The Devgion Advantage</SectionLabel>
             <h2
               id="why-us-heading"
-              className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
+              className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {whyUsData.heading}
+              {heading}
             </h2>
           </FadeIn>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {whyUsData.points.map((point, index) => {
+          {points.map((point, index) => {
             const Icon = iconMap[point.icon as keyof typeof iconMap] || Utensils;
             return (
               <FadeIn key={point.title} delay={index * 0.1}>

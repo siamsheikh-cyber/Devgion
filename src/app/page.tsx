@@ -6,12 +6,13 @@ import {
   HowItWorksSection,
   WorkSection,
   WhyUsSection,
+  StatsSection,
   FaqSection,
   CtaSection,
 } from "@/components/sections";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site";
-import { faqData } from "@/data/homepage";
+import { faqItems } from "@/data/faq";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -34,7 +35,7 @@ export default function HomePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqData.items.map((item) => ({
+    mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -79,6 +80,9 @@ export default function HomePage() {
 
       {/* 6. Why Devgion */}
       <WhyUsSection />
+
+      {/* 6b. Stats Panel */}
+      <StatsSection />
 
       {/* 7. FAQ */}
       <FaqSection />

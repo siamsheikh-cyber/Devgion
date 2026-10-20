@@ -1,7 +1,8 @@
 import { Clock, MousePointerClick, Smartphone } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { problemData } from "@/data/homepage";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import type { ProblemPoint } from "@/types";
 
 const iconMap = {
   Clock,
@@ -9,29 +10,50 @@ const iconMap = {
   Smartphone,
 };
 
+const heading = "Great food. Great reviews. A website that hides both.";
+
+const points: ProblemPoint[] = [
+  {
+    title: "Hard-to-find menus & hours",
+    description:
+      "Guests cannot quickly find the menu and hours when deciding where to eat.",
+    icon: "Clock",
+  },
+  {
+    title: "Overlooked action buttons",
+    description:
+      "The order, reserve and call buttons are easy to miss, costing you direct business.",
+    icon: "MousePointerClick",
+  },
+  {
+    title: "Awkward on mobile phones",
+    description:
+      "The site is slow or awkward on a phone, where most restaurant visitors are looking.",
+    icon: "Smartphone",
+  },
+];
+
 export function ProblemSection() {
   return (
     <section
       aria-labelledby="problem-heading"
-      className="dot-grid-bg border-y border-border/60 bg-muted/30 py-16 sm:py-24"
+      className="py-16 sm:py-24"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>
-            <span className="font-heading text-xs font-bold uppercase tracking-wider text-primary">
-              The Problem
-            </span>
+            <SectionLabel>The Problem</SectionLabel>
             <h2
               id="problem-heading"
-              className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl"
+              className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl"
             >
-              {problemData.heading}
+              {heading}
             </h2>
           </FadeIn>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {problemData.points.map((point, index) => {
+          {points.map((point, index) => {
             const Icon = iconMap[point.icon as keyof typeof iconMap] || Clock;
             return (
               <FadeIn key={point.title} delay={index * 0.1}>

@@ -10,8 +10,8 @@
    ============================================================ */
 :root,
 .dark {
-  --brand-from: #3682FC;
-  --brand-to:   #776CF0;
+  --brand-from: #3D78FB;
+  --brand-to: #7555EE;
 }
 
 /* ============================================================
@@ -195,55 +195,118 @@ button {
 }
 
 /* ============================================================
-   DOT-GRID BACKGROUND UTILITY
-   Used by every section below the hero.
-   Pure CSS radial-gradient pattern — zero weight, zero images.
+   GLOBAL FIXED DOTTED BACKGROUND LAYER
+   Pure CSS radial-gradient pattern — fixed to viewport, zero images.
    Light mode: brand-blue dots at very low opacity.
-   Dark mode: slightly brighter to remain visible.
-   Mask fades the pattern toward all edges so it never clips.
+   Dark mode: slightly tuned to remain visible against dark background.
+   Mask fades the pattern softly toward screen edges.
    ============================================================ */
-.dot-grid-bg {
-  position: relative;
+.fixed-dotted-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-image: radial-gradient(circle,
+      color-mix(in srgb, var(--brand-from) 18%, transparent) 1.5px,
+      transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%,
+      black 30%,
+      transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%,
+      black 30%,
+      transparent 100%);
 }
 
-.dot-grid-bg::before {
-  content: "";
+.dark .fixed-dotted-background {
+  background-image: radial-gradient(circle,
+      color-mix(in srgb, var(--brand-from) 28%, transparent) 1.5px,
+      transparent 1.5px);
+}
+
+/* ============================================================
+   SHARED BUTTON SHINE SWEEP EFFECT
+   Runs continuously all the time without hover.
+   Soft, subtle diagonal light band passes across each button,
+   repeats forever with a short pause between sweeps.
+   Stops when hovered or keyboard-focused, and starts again on leave.
+   Respects prefers-reduced-motion (no animation).
+   ============================================================ */
+
+.btn-shine {
   position: absolute;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
-
-  /* Dot pattern: 1.5px dot every 28px, brand blue at very low opacity */
-  background-image: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--brand-from) 18%, transparent) 1.5px,
-    transparent 1.5px
+  opacity: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    rgba(255, 255, 255, 0.05) 38%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.05) 62%,
+    transparent 85%
   );
-  background-size: 28px 28px;
-
-  /* Soft edge fade in all four directions */
-  -webkit-mask-image: radial-gradient(
-    ellipse 85% 85% at 50% 50%,
-    black 30%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 85% 85% at 50% 50%,
-    black 30%,
-    transparent 100%
-  );
-}
-
-.dark .dot-grid-bg::before {
-  background-image: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--brand-from) 28%, transparent) 1.5px,
-    transparent 1.5px
-  );
-}
-
-/* Ensure content inside sits above the pseudo-element */
-.dot-grid-bg > * {
-  position: relative;
   z-index: 1;
+  animation: btn-shine-sweep 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Secondary / outlined button variant: softer tint visible in light and dark */
+.btn-shine-secondary {
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    color-mix(in srgb, var(--brand-from) 5%, transparent) 38%,
+    color-mix(in srgb, var(--brand-from) 14%, transparent) 50%,
+    color-mix(in srgb, var(--brand-from) 5%, transparent) 62%,
+    transparent 85%
+  );
+}
+
+.dark .btn-shine-secondary {
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    rgba(255, 255, 255, 0.03) 38%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.03) 62%,
+    transparent 85%
+  );
+}
+
+@keyframes btn-shine-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  46% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(200%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+/* Stops when the user hovers over the button (or focuses it with the keyboard).
+   When the cursor leaves, it starts again. */
+:is(button, a, [role="button"]):is(:hover, :focus-visible) .btn-shine,
+:is(.group, .group\/btn):is(:hover, :focus-visible) .btn-shine {
+  animation: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine {
+    animation: none !important;
+    display: none !important;
+  }
 }

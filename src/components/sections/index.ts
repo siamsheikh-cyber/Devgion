@@ -4,5 +4,6 @@ export { ServicesSection } from "./ServicesSection";
 export { HowItWorksSection } from "./HowItWorksSection";
 export { WorkSection } from "./WorkSection";
 export { WhyUsSection } from "./WhyUsSection";
+export { StatsSection } from "./StatsSection";
 export { FaqSection } from "./FaqSection";
 export { CtaSection } from "./CtaSection";

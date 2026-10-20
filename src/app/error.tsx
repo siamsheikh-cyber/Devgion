@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { Container } from "@/components/layout/Container";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
@@ -34,9 +35,10 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
       <button
         type="button"
         onClick={reset}
-        className="mt-8 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        className="group relative overflow-hidden mt-8 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
       >
-        Try again
+        <ButtonShine />
+        <span>Try again</span>
       </button>
     </Container>
   );

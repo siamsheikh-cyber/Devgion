@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
 type ButtonSize = "sm" | "md" | "lg";
@@ -44,7 +45,7 @@ export function Button({
     <button
       type="button"
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors",
+        "relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
         "disabled:cursor-not-allowed disabled:opacity-50",
         variantClasses[variant],
@@ -54,6 +55,7 @@ export function Button({
       )}
       {...props}
     >
+      <ButtonShine variant={variant === "primary" ? "default" : "secondary"} />
       {children}
     </button>
   );

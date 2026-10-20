@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 
 /**
  * Custom 404 page.
@@ -22,15 +23,17 @@ export default function NotFound() {
       <div className="mt-8 flex gap-4">
         <Link
           href="/"
-          className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          className="group relative overflow-hidden rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
-          Back to home
+          <ButtonShine />
+          <span>Back to home</span>
         </Link>
         <Link
           href="/contact"
-          className="rounded-md border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+          className="group relative overflow-hidden rounded-md border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
         >
-          Contact us
+          <ButtonShine variant="secondary" />
+          <span>Contact us</span>
         </Link>
       </div>
     </Container>

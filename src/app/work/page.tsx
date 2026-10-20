@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { ProjectCard } from "@/components/work/ProjectCard";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { projects } from "@/data/projects";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -17,13 +18,11 @@ export const metadata: Metadata = buildMetadata({
  */
 export default function WorkPage() {
   return (
-    <div className="py-16 sm:py-20 md:py-24">
+    <div className="py-16 sm:py-15 md:py-24">
       <Container>
         <div className="max-w-2xl">
-          <span className="font-heading text-xs font-bold uppercase tracking-wider text-primary">
-            Portfolio
-          </span>
-          <h1 className="mt-2 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <SectionLabel>Portfolio</SectionLabel>
+          <h1 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Recent Work
           </h1>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">

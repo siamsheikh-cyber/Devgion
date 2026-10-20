@@ -1,18 +1,17 @@
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { projects } from "@/data/projects";
 
 export function WorkSection() {
   return (
-    <section id="work" aria-labelledby="work-heading" className="dot-grid-bg py-20 sm:py-28 relative">
+    <section id="work" aria-labelledby="work-heading" className="relative py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>
             {/* Small pill label above heading */}
-            <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              Our Work
-            </span>
+            <SectionLabel>Our Work</SectionLabel>
 
             {/* Heading with one gradient word matching other sections */}
             <h2
@@ -20,7 +19,7 @@ export function WorkSection() {
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
               Recent{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="box-decoration-clone bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent pb-0.5">
                 work
               </span>
             </h2>

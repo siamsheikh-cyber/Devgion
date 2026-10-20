@@ -34,6 +34,7 @@ export const siteConfig = {
 
   /** Primary navigation links */
   nav: [
+    { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Work", href: "/work" },
     { label: "About", href: "/about" },

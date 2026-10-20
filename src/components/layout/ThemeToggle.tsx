@@ -29,7 +29,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       }
       onClick={toggleTheme}
       className={cn(
-        "rounded-md p-2 text-foreground/70 transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+        "rounded-full p-2 text-foreground/70 transition-colors bg-transparent/40 border-[0.5px] border-gray-300 dark:border-gray-200/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
         className,
       )}
     >

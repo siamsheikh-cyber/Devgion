@@ -5,6 +5,8 @@ import { ArrowLeft, ExternalLink, ArrowRight, AlertCircle, Wrench, CheckCircle2,
 import { projects, getProjectBySlug } from "@/data/projects";
 import { Container } from "@/components/layout/Container";
 import { BrowserFrame, PhoneFrame } from "@/components/ui/MockupFrame";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 import { cn } from "@/lib/utils";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site";
@@ -100,9 +102,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Header */}
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-heading text-xs font-bold uppercase tracking-wider text-primary">
-                Case Study
-              </span>
+              <SectionLabel>Case Study</SectionLabel>
               {showPlatform && (
                 <span className="inline-flex items-center rounded-full bg-secondary px-3 py-0.5 text-xs font-semibold text-secondary-foreground">
                   {project.platform}
@@ -110,7 +110,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               )}
             </div>
 
-            <h1 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            <h1 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
               {project.title}
             </h1>
 
@@ -211,8 +211,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="ml-auto flex items-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="group relative overflow-hidden inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
+                <ButtonShine />
                 <span>Get a free 7-day test</span>
                 <ArrowRight className="size-4" />
               </Link>

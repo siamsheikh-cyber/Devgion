@@ -141,6 +141,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* Site-wide fixed dotted background layer */}
+          <div className="fixed-dotted-background" aria-hidden="true" />
+
           {/* Structured data */}
           <JsonLd data={[organizationSchema, webSiteSchema]} />
 

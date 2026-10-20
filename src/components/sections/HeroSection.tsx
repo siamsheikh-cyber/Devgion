@@ -1,47 +1,28 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { Container } from "@/components/layout/Container";
-import { CountUp } from "@/components/ui/CountUp";
-import { heroData } from "@/data/homepage";
+import Image from "next/image";
+import { HeroBackground } from "@/components/sections/HeroBackground";
+import { HeroScrollIndicator } from "@/components/sections/HeroScrollIndicator";
+import { ButtonShine } from "@/components/ui/ButtonShine";
+
+const clientAvatars = [
+  { src: "/images/clients/client-1.webp", alt: "Restaurant client 1" },
+  { src: "/images/clients/client-2.webp", alt: "Restaurant client 2" },
+  { src: "/images/clients/client-3.webp", alt: "Restaurant client 3" },
+  { src: "/images/clients/client-4.webp", alt: "Restaurant client 4" },
+];
 
 export function HeroSection() {
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollY } = useScroll();
-  // Fade out scroll indicator on scroll
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, 100], [1, 0]);
-
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden"
+      className="relative isolate -mt-16 flex min-h-svh flex-col overflow-hidden bg-background pt-16"
     >
       {/* ============================================================
-          FULL-BLEED BACKGROUND IMAGE
-          fill + object-cover + optional slow zoom
+          FULL-BLEED BACKGROUND IMAGE (Client animation component)
           ============================================================ */}
-      <div className="absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
-        <motion.div
-          className="absolute inset-0"
-          {...(!shouldReduceMotion && {
-            initial: { scale: 1 },
-            animate: { scale: 1.06 },
-            transition: { duration: 18, ease: "linear", repeat: Infinity, repeatType: "reverse" },
-          })}
-        >
-          <Image
-            src="/images/hero-bg.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </motion.div>
-      </div>
+      <HeroBackground />
 
       {/* ============================================================
           OVERLAY STACK
@@ -59,139 +40,75 @@ export function HeroSection() {
       </div>
 
       {/* ============================================================
-          CONTENT — left-aligned, vertically centered
+          CONTENT — Server-rendered plain HTML
           ============================================================ */}
       <Container className="relative my-auto py-20 sm:py-28 lg:py-32">
         <div className="max-w-2xl xl:max-w-3xl">
-          {/* Heading */}
-          <motion.h1
+          {/* Heading: single h1 with real spaces */}
+          <h1
             id="hero-heading"
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.08] sm:leading-[1.08]"
           >
             We Design Or Redesign{" "}
-            <span className="box-decoration-clone bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="box-decoration-clone bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent pb-0.5">
               Restaurant Websites
             </span>{" "}
             To Bring In More Orders And Bookings.
-          </motion.h1>
+          </h1>
 
           {/* Subheading */}
-          <motion.p
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: shouldReduceMotion ? 0 : 0.35,
-              ease: "easeOut",
-            }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg sm:leading-relaxed"
-          >
-            {heroData.subheading}
-          </motion.p>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg sm:leading-relaxed">
+            We combine beautiful design with how people make decisions, so guests find your menu, trust what they see, and order or book in a few taps.
+          </p>
 
           {/* Two Action Buttons */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: shouldReduceMotion ? 0 : 0.45,
-              ease: "easeOut",
-            }}
-            className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center"
-          >
+          <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             {/* Primary Gradient Button with Shine Sweep + Nudge Arrow */}
             <Link
-              href={heroData.primaryCta.href}
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              href="/contact"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3D78FB] to-[#7555EE] px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              {/* Soft shine sweep overlay */}
-              <span
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"
-                aria-hidden="true"
-              />
-              <span>{heroData.primaryCta.label}</span>
+              <ButtonShine />
+              <span>Get a Free Audit</span>
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
             {/* Secondary Ghost Button with Glowing Border on Hover */}
             <a
-              href={heroData.secondaryCta.href}
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-border/80 bg-card/60 px-6 py-3.5 text-base font-semibold text-foreground backdrop-blur-xs transition-all duration-300 hover:border-primary/60 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              href="#work"
+              className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-full border border-border/80 bg-card/60 px-6 py-3.5 text-base font-semibold text-foreground backdrop-blur-xs transition-all duration-300 hover:border-primary/60 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <span>{heroData.secondaryCta.label}</span>
+              <ButtonShine variant="secondary" />
+              <span>See our work</span>
               <ChevronDown className="size-4 text-muted-foreground transition-transform duration-200 group-hover:translate-y-0.5 group-hover:text-primary" />
             </a>
-          </motion.div>
+          </div>
 
-          {/* Proof Line + Supported Platforms */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: shouldReduceMotion ? 0 : 0.55,
-            }}
-            className="mt-8 border-t border-border/60 pt-5 space-y-2"
-          >
-            {/* Proof counter */}
-            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-              <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-              <span>
-                <CountUp to={24} duration={1.2} suffix="+" className="font-bold text-primary" /> websites built
-              </span>
+          {/* Proof Line: Overlapping Avatars + Trust Copy */}
+          <div className="mt-10 flex items-center gap-3">
+            <div className="flex -space-x-2 overflow-hidden">
+              {clientAvatars.map((client) => (
+                <Image
+                  key={client.src}
+                  src={client.src}
+                  alt={client.alt}
+                  width={32}
+                  height={32}
+                  className="inline-block size-8 rounded-full border-2 border-background object-cover"
+                />
+              ))}
             </div>
-
-            {/* Platform labels */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
-              <span className="rounded-md border border-border/70 bg-muted/40 px-2 py-0.5">Squarespace</span>
-              <span className="text-border">·</span>
-              <span className="rounded-md border border-border/70 bg-muted/40 px-2 py-0.5">Wix</span>
-              <span className="text-border">·</span>
-              <span className="rounded-md border border-border/70 bg-muted/40 px-2 py-0.5">WordPress</span>
-              <span className="text-border">·</span>
-              <span className="rounded-md border border-border/70 bg-muted/40 px-2 py-0.5">Next.js</span>
-            </div>
-          </motion.div>
+            <p className="text-sm font-medium text-muted-foreground">
+              Trusted by restaurant and cafe owners
+            </p>
+          </div>
         </div>
       </Container>
 
       {/* ============================================================
-          SUBTLE SCROLL INDICATOR AT BOTTOM OF HERO
-          Fades out as the user scrolls down
+          SCROLL INDICATOR (Client component with scroll-based opacity)
           ============================================================ */}
-      <motion.div
-        style={{ opacity: shouldReduceMotion ? 1 : scrollIndicatorOpacity }}
-        aria-hidden="true"
-        className="pointer-events-none mb-6 hidden justify-center md:flex"
-      >
-        <a
-          href="#work"
-          className="pointer-events-auto flex flex-col items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <span className="tracking-wider uppercase text-[10px] font-medium">Scroll to explore</span>
-          <div className="flex h-7 w-4 items-start justify-center rounded-full border border-border p-1 shadow-xs">
-            <motion.span
-              animate={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                    y: [0, 8, 0],
-                  }
-              }
-              transition={{
-                duration: 1.6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="h-1.5 w-1 rounded-full bg-primary"
-            />
-          </div>
-        </a>
-      </motion.div>
+      <HeroScrollIndicator />
     </section>
   );
 }

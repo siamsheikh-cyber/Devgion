@@ -1,7 +1,7 @@
 import { Layout, Search, Film, CheckCircle } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { servicesData } from "@/data/homepage";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
 const iconMap = {
@@ -10,27 +10,81 @@ const iconMap = {
   Film,
 };
 
+interface ServiceCard {
+  category: string;
+  title: string;
+  badge: string;
+  description: string;
+  features: string[];
+  icon: keyof typeof iconMap;
+}
+
+const heading = "What we do";
+
+const serviceCards: ServiceCard[] = [
+  {
+    category: "Main",
+    title: "Website Design & Redesign",
+    badge: "Core Service",
+    description:
+      "Website design and redesign, on Squarespace, Wix, WordPress or custom Next.js, built around getting guests to order, book and call.",
+    features: [
+      "Squarespace, Wix, WordPress or custom Next.js",
+      "Conversion-focused layouts for orders & bookings",
+      "Lightning-fast mobile performance",
+      "Streamlined menu & online reservation paths",
+    ],
+    icon: "Layout",
+  },
+  {
+    category: "Growth",
+    title: "Local SEO",
+    badge: "Visibility",
+    description:
+      "Local SEO, including Google Business Profile and on-page basics to help hungry locals find your tables first.",
+    features: [
+      "Google Business Profile optimization",
+      "On-page restaurant SEO & structured data",
+      "Local keyword & neighbourhood targeting",
+      "Menu indexing & Google Maps alignment",
+    ],
+    icon: "Search",
+  },
+  {
+    category: "Extras",
+    title: "Branding, Graphics & Video",
+    badge: "Add-ons",
+    description:
+      "Branding and graphics, video production to give your restaurant a polished, cohesive visual presence.",
+    features: [
+      "Visual identity & brand styling",
+      "Digital menu graphics & promotional assets",
+      "Hero food & atmosphere video integration",
+      "Print & social media collateral",
+    ],
+    icon: "Film",
+  },
+];
+
 export function ServicesSection() {
   return (
-    <section aria-labelledby="services-heading" className="dot-grid-bg py-20 sm:py-28">
+    <section aria-labelledby="services-heading" className="py-15 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>
-            <span className="font-heading text-xs font-bold uppercase tracking-wider text-primary">
-              Services
-            </span>
+            <SectionLabel>Services</SectionLabel>
             <h2
               id="services-heading"
-              className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
+              className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {servicesData.heading}
+              {heading}
             </h2>
           </FadeIn>
         </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-3">
-          {servicesData.services.map((service, index) => {
-            const Icon = iconMap[service.icon as keyof typeof iconMap] || Layout;
+          {serviceCards.map((service, index) => {
+            const Icon = iconMap[service.icon] || Layout;
             const isMain = service.category === "Main";
 
             return (

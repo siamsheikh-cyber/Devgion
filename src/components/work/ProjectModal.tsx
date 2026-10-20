@@ -15,6 +15,8 @@ import {
 import { motion, useReducedMotion } from "motion/react";
 import type { Project } from "@/types";
 import { BrowserFrame, PhoneFrame } from "@/components/ui/MockupFrame";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { ButtonShine } from "@/components/ui/ButtonShine";
 import { cn } from "@/lib/utils";
 
 interface ProjectModalProps {
@@ -196,12 +198,10 @@ export function ProjectModal({ project }: ProjectModalProps) {
 
           {/* Category label & Title */}
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-              Restaurant Website Redesign
-            </span>
+            <SectionLabel>Restaurant Website Redesign</SectionLabel>
             <h2
               id="modal-project-title"
-              className="mt-1 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+              className="mt-2 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
             >
               {project.title}
             </h2>
@@ -283,8 +283,9 @@ export function ProjectModal({ project }: ProjectModalProps) {
             <Link
               href="/contact"
               onClick={handleClose}
-              className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="group relative overflow-hidden inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
+              <ButtonShine />
               <span>Get a free 7-day test</span>
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
