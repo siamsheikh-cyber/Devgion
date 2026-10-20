@@ -11,7 +11,7 @@ export const projects: Project[] = [
     slug: "vmv-catering",
     title: "VMV Catering",
     client: "VMV Catering",
-    platform: "TODO", // Platform tag hidden when TODO
+    platform: "Wix",
     tags: ["Order Online", "Per-Person Pricing", "Action Sections"],
     problem:
       "Office managers needed to see per-person pricing and order quickly.",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     slug: "restaurant-website",
     title: "Restaurant website (private client)",
     client: "Private Client",
-    platform: "TODO", // Platform tag hidden when TODO
+    platform: "WordPress",
     tags: ["Responsive Layout", "Reservations", "Events", "Shop"],
     problem:
       "A restaurant needed a responsive site with menu, reservations and events.",
