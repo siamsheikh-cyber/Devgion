@@ -68,7 +68,7 @@ const serviceCards: ServiceCard[] = [
 
 export function ServicesSection() {
   return (
-    <section aria-labelledby="services-heading" className="py-15 sm:py-28">
+    <section aria-labelledby="services-heading" className="py-12 sm:py-18">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>

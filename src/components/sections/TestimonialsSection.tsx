@@ -55,7 +55,7 @@ export function TestimonialsSection() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="py-15 sm:py-28"
+      className="py-12 sm:py-18"
     >
       <Container>
         {/* Section Header */}

@@ -41,7 +41,7 @@ export function HowItWorksSection() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      className="py-15 sm:py-28"
+      className="py-12 sm:py-18"
     >
       <Container>
         <div className="mx-auto max-w-2xl text-center">

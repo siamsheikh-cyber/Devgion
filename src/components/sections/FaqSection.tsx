@@ -8,7 +8,7 @@ const subheading = "Everything you need to know about our work and the free 7-da
 
 export function FaqSection() {
   return (
-    <section aria-labelledby="faq-heading" className="py-15 sm:py-28">
+    <section aria-labelledby="faq-heading" className="py-12 sm:py-18">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>

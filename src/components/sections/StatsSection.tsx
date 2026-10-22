@@ -36,7 +36,7 @@ const stats = [
  */
 export function StatsSection() {
   return (
-    <section aria-label="Key statistics" className="py-15 sm:py-15 lg:py-15">
+    <section aria-label="Key statistics" className="py-8 sm:py-10 lg:py-12">
       <Container>
         <FadeIn>
           <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-card/75 p-5 shadow-lg shadow-primary/5 backdrop-blur-md dark:border-border/60 dark:bg-card/50 sm:p-5 lg:p-6">

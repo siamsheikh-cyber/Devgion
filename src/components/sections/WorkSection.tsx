@@ -9,7 +9,7 @@ import { projects } from "@/data/projects";
 
 export function WorkSection() {
   return (
-    <section id="work" aria-labelledby="work-heading" className="relative py-20 sm:py-28">
+    <section id="work" aria-labelledby="work-heading" className="relative py-14 sm:py-20">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn>

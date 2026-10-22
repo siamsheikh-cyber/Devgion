@@ -37,7 +37,7 @@ export function ProblemSection() {
   return (
     <section
       aria-labelledby="problem-heading"
-      className="py-16 sm:py-24"
+      className="py-12 sm:py-18"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
