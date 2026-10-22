@@ -147,10 +147,10 @@ export function TestimonialsSlider({ testimonials }: TestimonialsSliderProps) {
               <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs transition-[border-color,box-shadow,transform] duration-300 ease-out hover:border-primary/40 hover:shadow-lg hover:shadow-primary/40">
                 <div>
                   {/* 5-Star Rating Display */}
-                  <div
-                    className="flex items-center gap-1 text-[#22D3EE]"
-                    aria-label={`${item.rating} out of 5 stars`}
-                  >
+                  <div className="flex items-center gap-1 text-[#22D3EE]">
+                    <span className="sr-only">
+                      {item.rating} out of 5 stars
+                    </span>
                     {Array.from({ length: item.rating }).map((_, i) => (
                       <Star
                         key={i}

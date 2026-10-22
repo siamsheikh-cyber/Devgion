@@ -70,11 +70,6 @@ export function ProblemSection() {
                       {point.description}
                     </p>
                   </div>
-
-                  <div className="mt-6 flex items-center gap-1.5 text-xs font-medium text-destructive">
-                    <span className="size-1.5 rounded-full bg-destructive" />
-                    <span>Losing potential diners</span>
-                  </div>
                 </div>
               </FadeIn>
             );

@@ -17,7 +17,7 @@ import { ButtonShine } from "@/components/ui/ButtonShine";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Devgion — Restaurant & Cafe Web Specialists",
+  title: "About — Restaurant & Cafe Web Specialists",
   description:
     "Learn about Devgion: a small remote team focused exclusively on web design, development, and SEO for restaurants and cafes worldwide. 24 sites built with an honest, no lock-in process.",
   path: "/about",

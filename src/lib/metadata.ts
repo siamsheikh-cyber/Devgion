@@ -21,20 +21,26 @@ export function buildMetadata({
   noTemplate = false,
 }: BuildMetadataOptions = {}): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const resolvedTitle = noTemplate
-    ? (title ?? siteConfig.name)
-    : title
-      ? `${title} | ${siteConfig.name}`
-      : siteConfig.name;
+
+  // Strip any trailing "| Devgion" from incoming title to prevent duplicates with layout template
+  const cleanTitle = title
+    ? title.replace(new RegExp(`\\s*\\|\\s*${siteConfig.name}$`, "i"), "").trim()
+    : siteConfig.name;
+
+  // Open Graph and Twitter cards do not inherit Next.js title.template, so provide full title
+  const fullTitle =
+    cleanTitle === siteConfig.name
+      ? siteConfig.name
+      : `${cleanTitle} | ${siteConfig.name}`;
 
   return {
-    title: resolvedTitle,
+    title: noTemplate ? { absolute: cleanTitle } : cleanTitle,
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: resolvedTitle,
+      title: fullTitle,
       description,
       url,
       siteName: siteConfig.name,
@@ -43,7 +49,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: resolvedTitle,
+      title: fullTitle,
       description,
     },
   };
