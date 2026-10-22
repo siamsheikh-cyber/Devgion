@@ -200,7 +200,7 @@ button {
    Light mode: brand-blue dots at very low opacity.
    Dark mode: slightly tuned to remain visible against dark background.
    Mask fades the pattern softly toward screen edges.
-   ============================================================ */
+   ============================================================ 
 .fixed-dotted-background {
   position: fixed;
   inset: 0;
@@ -222,6 +222,113 @@ button {
   background-image: radial-gradient(circle,
       color-mix(in srgb, var(--brand-from) 28%, transparent) 1.5px,
       transparent 1.5px);
+}*/
+
+
+/* ============================================================
+   Second ---- GLOBAL FIXED DOTTED BACKGROUND — v2
+   1. base      : chhoto dot grid + sparse boro accent dot
+   2. ::before  : norom aurora glow, dhire bhashe
+   3. ::after   : shimmer — ekta norom spot er vitore dot gulo ujjol hoy
+   ============================================================ */
+.fixed-dotted-background {
+  --dot-a: 18%;
+  /* chhoto dot er opacity */
+  --dot-b: 30%;
+  /* boro accent dot er opacity */
+  --glow: 10%;
+  /* aurora er opacity */
+  --shine: 55%;
+  /* shimmer e dot er opacity */
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--brand-to, var(--brand-from)) var(--dot-b), transparent) 2px, transparent 2.5px),
+    radial-gradient(circle, color-mix(in srgb, var(--brand-from) var(--dot-a), transparent) 1.5px, transparent 1.5px);
+  background-size: 112px 112px, 28px 28px;
+  background-position: 14px 14px, 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
+}
+
+.fixed-dotted-background::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 35% at 25% 30%, color-mix(in srgb, var(--brand-from) var(--glow), transparent), transparent 70%),
+    radial-gradient(35% 40% at 75% 70%, color-mix(in srgb, var(--brand-to, var(--brand-from)) var(--glow), transparent), transparent 70%);
+  filter: blur(40px);
+  animation: dotbg-float 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.fixed-dotted-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--brand-from) var(--shine), transparent) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(circle 260px at var(--sx, 30%) var(--sy, 40%), #000 0%, transparent 100%);
+  mask-image: radial-gradient(circle 260px at var(--sx, 30%) var(--sy, 40%), #000 0%, transparent 100%);
+  animation: dotbg-sweep 22s ease-in-out infinite alternate;
+}
+
+@property --sx {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 30%;
+}
+
+@property --sy {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
+
+@keyframes dotbg-float {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(3%, 3%, 0) scale(1.08);
+  }
+}
+
+@keyframes dotbg-sweep {
+  0% {
+    --sx: 15%;
+    --sy: 30%;
+  }
+
+  50% {
+    --sx: 70%;
+    --sy: 65%;
+  }
+
+  100% {
+    --sx: 40%;
+    --sy: 20%;
+  }
+}
+
+.dark .fixed-dotted-background {
+  --dot-a: 28%;
+  --dot-b: 42%;
+  --glow: 16%;
+  --shine: 75%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fixed-dotted-background::before,
+  .fixed-dotted-background::after {
+    animation: none;
+  }
 }
 
 /* ============================================================
@@ -308,3 +415,93 @@ button {
     display: none !important;
   }
 }
+
+
+
+/* ===== Beam link button ===== */
+.beam-link {
+  isolation: isolate;
+  overflow: hidden;
+  --beam-speed: 4s;
+  background-image: linear-gradient(180deg,
+      transparent 0%,
+      color-mix(in oklab, currentColor 9%, transparent) 100%);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s, border-color 0.3s, background-color 0.3s;
+}
+
+/* start button beam: border dhore clockwise ghure. leading edge hard, tail soft, vitore fade */
+.beam-link::before,
+.beam-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 48px;
+  height: 18px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in oklab, currentColor 55%, transparent) 96%,
+      color-mix(in oklab, currentColor 80%, transparent) 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+  offset-path: inset(0 round 9999px);
+  offset-rotate: auto;
+  offset-anchor: 100% 0;
+  animation: beam-link-travel var(--beam-speed) linear infinite;
+  animation-delay: calc(var(--beam-speed) * -0.32);
+}
+
+/* hover e opposite dike dwitiyo beam */
+.beam-link::after {
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation-delay: calc(var(--beam-speed) * -0.82);
+}
+
+.beam-link:hover,
+.beam-link:focus-visible {
+  background-color: color-mix(in oklab, currentColor 6%, transparent);
+  box-shadow: 0 10px 30px -12px color-mix(in oklab, currentColor 35%, transparent);
+}
+
+.beam-link:hover::after,
+.beam-link:focus-visible::after {
+  opacity: 0.7;
+}
+
+.beam-link:active {
+  transform: scale(0.975);
+  box-shadow: inset 0 2px 8px rgb(0 0 0 / 0.35);
+}
+
+@keyframes beam-link-travel {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* purono browser e beam lukiye rakhi, button thik thake */
+@supports not (offset-path: inset(0 round 9999px)) {
+
+  .beam-link::before,
+  .beam-link::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beam-link {
+    --beam-speed: 24s;
+    transition: none;
+  }
+}
+
+/* end button beam: border dhore clockwise ghure. leading edge hard, tail soft, vitore fade */

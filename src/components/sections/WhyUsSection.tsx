@@ -11,7 +11,7 @@ const iconMap = {
   ShieldCheck,
 };
 
-const heading = "Why restaurants choose us";
+const heading = "";
 
 const points: WhyPoint[] = [
   {
@@ -54,7 +54,8 @@ export function WhyUsSection() {
               id="why-us-heading"
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {heading}
+              Why restaurants
+              <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> choose us</span>
             </h2>
           </FadeIn>
         </div>
@@ -64,7 +65,7 @@ export function WhyUsSection() {
             const Icon = iconMap[point.icon as keyof typeof iconMap] || Utensils;
             return (
               <FadeIn key={point.title} delay={index * 0.1}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-colors hover:border-primary/40">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-[border-color,box-shadow,transform] duration-300 ease-out hover:border-primary/40 hover:shadow-lg hover:shadow-primary/40">
                   <div>
                     <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       <Icon className="size-5" aria-hidden="true" />

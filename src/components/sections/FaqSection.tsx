@@ -4,7 +4,6 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Accordion } from "@/components/ui/Accordion";
 import { faqItems } from "@/data/faq";
 
-const heading = "Frequently Asked Questions";
 const subheading = "Everything you need to know about our work and the free 7-day test.";
 
 export function FaqSection() {
@@ -18,7 +17,8 @@ export function FaqSection() {
               id="faq-heading"
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {heading}
+              Frequently Asked
+              <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> Questions</span>
             </h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
               {subheading}

@@ -66,7 +66,7 @@ export function StatsSection() {
                     index % 2 === 0 ? "border-r border-border/50 lg:border-r-0" : "",
                   )}
                 >
-                  <div className="font-heading text-4xl font-extrabold tracking-tight leading-normal pb-1 sm:text-4xl sm:leading-normal sm:pb-2 lg:text-5xl lg:leading-normal bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] bg-clip-text text-transparent">
+                  <div className="font-heading text-4xl font-extrabold tracking-tight leading-normal pb-1 sm:text-4xl sm:leading-normal sm:pb-2 lg:text-5xl lg:leading-normal bg-gradient-to-r from-[#25CCEF]/80 to-[var(--brand-to)] bg-clip-text text-transparent">
                     <StatCounter value={stat.value} suffix={stat.suffix} />
                   </div>
                   <p className="mt-2 text-xs font-medium text-muted-foreground sm:text-sm">

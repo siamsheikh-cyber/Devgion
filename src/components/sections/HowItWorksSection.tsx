@@ -6,7 +6,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonShine } from "@/components/ui/ButtonShine";
 import type { TestStep } from "@/types";
 
-const heading = "Try it before you commit";
+const heading = "";
 const subheading =
   "A risk-free way to see how a conversion-focused update impacts your direct restaurant guests.";
 
@@ -51,7 +51,8 @@ export function HowItWorksSection() {
               id="how-it-works-heading"
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {heading}
+              Try it before you
+              <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> commit</span>
             </h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
               {subheading}
@@ -62,7 +63,7 @@ export function HowItWorksSection() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <FadeIn key={step.step} delay={index * 0.1}>
-              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-colors hover:border-primary/40">
+              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-[border-color,box-shadow,transform] duration-300 ease-out hover:border-primary/40 hover:shadow-lg hover:shadow-primary/40">
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs font-bold tracking-widest text-primary">

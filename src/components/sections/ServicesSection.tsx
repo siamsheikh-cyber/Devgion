@@ -19,7 +19,7 @@ interface ServiceCard {
   icon: keyof typeof iconMap;
 }
 
-const heading = "What we do";
+const heading = "";
 
 const serviceCards: ServiceCard[] = [
   {
@@ -77,7 +77,8 @@ export function ServicesSection() {
               id="services-heading"
               className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {heading}
+              What
+              <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> we do</span>
             </h2>
           </FadeIn>
         </div>

@@ -5,6 +5,7 @@ import type { Project } from "@/types";
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonShine } from "@/components/ui/ButtonShine";
+import { ProjectCardSpotlight } from "@/components/work/ProjectCardSpotlight";
 
 interface ProjectCardProps {
   project: Project;
@@ -28,11 +29,13 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         className,
       )}
     >
+      <ProjectCardSpotlight />
+
       {/* Top Screenshot: edge-to-edge with no padding, rounded corners, subtle hover zoom */}
       <Link
         href={`/work/${project.slug}`}
         scroll={false}
-        className="group/img relative block w-full aspect-[16/10] overflow-hidden bg-muted/40"
+        className="group/img relative z-10 block w-full aspect-[16/10] overflow-hidden bg-muted/40"
         tabIndex={-1}
         aria-hidden="true"
       >
@@ -56,7 +59,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       </Link>
 
       {/* Card Body: flex-1 so content stretches and footer aligns at bottom */}
-      <div className="flex flex-1 flex-col p-6">
+      <div className="relative z-10 flex flex-1 flex-col p-6">
         {/* Title row with animated arrow */}
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-heading text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
@@ -100,9 +103,8 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           <Link
             href={`/work/${project.slug}`}
             scroll={false}
-            className="group/btn relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-border/80 bg-background/80 py-2.5 px-4 text-xs font-semibold text-foreground backdrop-blur-xs shadow-xs transition-all duration-300 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="beam-link group/btn relative flex w-full items-center justify-center gap-2 rounded-full border border-border/80 bg-background/80 px-4 py-2.5 text-xs font-semibold text-foreground backdrop-blur-xs shadow-xs hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
-            <ButtonShine variant="secondary" />
             <span>See details</span>
             <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
           </Link>

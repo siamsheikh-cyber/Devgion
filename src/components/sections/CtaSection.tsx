@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ButtonShine } from "@/components/ui/ButtonShine";
 
-const heading = "Send us your restaurant's website.";
+const heading = "";
 const subheading = "We will tell you honestly what we would fix first.";
 const buttonText = "Get a Free Audit";
 const buttonHref = "/contact";
@@ -31,7 +31,8 @@ export function CtaSection() {
                 id="cta-heading"
                 className="mt-6 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
               >
-                {heading}
+                Send us your restaurant's
+                <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> website.</span>
               </h2>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">

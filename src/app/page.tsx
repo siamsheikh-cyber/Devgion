@@ -8,6 +8,7 @@ import {
   WhyUsSection,
   StatsSection,
   FaqSection,
+  TestimonialsSection,
   CtaSection,
 } from "@/components/sections";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -86,6 +87,9 @@ export default function HomePage() {
 
       {/* 7. FAQ */}
       <FaqSection />
+
+      {/* 7b. Testimonials */}
+      <TestimonialsSection />
 
       {/* 8. Final Call to Action */}
       <CtaSection />

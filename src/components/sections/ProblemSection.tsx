@@ -10,7 +10,7 @@ const iconMap = {
   Smartphone,
 };
 
-const heading = "Great food. Great reviews. A website that hides both.";
+const heading = "";
 
 const points: ProblemPoint[] = [
   {
@@ -45,9 +45,10 @@ export function ProblemSection() {
             <SectionLabel>The Problem</SectionLabel>
             <h2
               id="problem-heading"
-              className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl"
+              className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              {heading}
+              Great food. Great reviews. A website
+              <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> that hides both.</span>
             </h2>
           </FadeIn>
         </div>
@@ -57,7 +58,7 @@ export function ProblemSection() {
             const Icon = iconMap[point.icon as keyof typeof iconMap] || Clock;
             return (
               <FadeIn key={point.title} delay={index * 0.1}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-colors hover:border-primary/40">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-xs transition-[border-color,box-shadow,transform] duration-300 ease-out hover:border-primary/40 hover:shadow-lg hover:shadow-primary/40">
                   <div>
                     <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       <Icon className="size-6" aria-hidden="true" />
