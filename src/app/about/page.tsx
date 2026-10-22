@@ -165,7 +165,7 @@ export default function AboutPage() {
       {/* 2. Our Belief */}
       <section
         aria-labelledby="belief-heading"
-        className="py-12 sm:py-18 bg-muted/30"
+        className="py-12 sm:py-18 bg-muted/20"
       >
         <Container>
           <div className="mx-auto max-w-3xl">
@@ -279,7 +279,7 @@ export default function AboutPage() {
       {/* 4. Why Restaurants Only */}
       <section
         aria-labelledby="niche-heading"
-        className="py-12 sm:py-18 bg-muted/30"
+        className="py-12 sm:py-18 bg-muted/10"
       >
         <Container>
           <div className="mx-auto max-w-3xl">

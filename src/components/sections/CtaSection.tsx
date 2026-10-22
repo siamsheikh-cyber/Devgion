@@ -4,12 +4,35 @@ import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ButtonShine } from "@/components/ui/ButtonShine";
 
-const heading = "";
-const subheading = "We will tell you honestly what we would fix first.";
-const buttonText = "Get a Free Audit";
-const buttonHref = "/contact";
+interface CtaSectionProps {
+  heading?: React.ReactNode;
+  subheading?: React.ReactNode;
+  badge?: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
 
-export function CtaSection() {
+const defaultSubheading = "We will tell you honestly what we would fix first.";
+const defaultButtonText = "Get a Free Audit";
+const defaultButtonHref = "/contact";
+
+export function CtaSection({
+  heading,
+  subheading = defaultSubheading,
+  badge = "Zero Risk · No Lock-in",
+  buttonText = defaultButtonText,
+  buttonHref = defaultButtonHref,
+}: CtaSectionProps = {}) {
+  const resolvedHeading = heading ?? (
+    <>
+      Send us your restaurant&apos;s
+      <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5">
+        {" "}
+        website.
+      </span>
+    </>
+  );
+
   return (
     <section aria-labelledby="cta-heading" className="py-12 sm:py-18">
       <Container>
@@ -24,15 +47,14 @@ export function CtaSection() {
             <div className="mx-auto max-w-2xl">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                 <Sparkles className="size-3.5" />
-                <span>Zero Risk · No Lock-in</span>
+                <span>{badge}</span>
               </span>
 
               <h2
                 id="cta-heading"
                 className="mt-6 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
               >
-                Send us your restaurant's
-                <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5"> website.</span>
+                {resolvedHeading}
               </h2>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">

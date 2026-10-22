@@ -339,16 +339,16 @@ button {
    3. ::after   : sonar ripple — kendro theke ek ta dheu ber hoy,
                   dheu er upor diye jawar somoy dot gulo ujjol hoy
    --brand-to optional: na thakle --brand-from diye-i chole.
-   ============================================================ */
+   ============================================================ 
 .fixed-dotted-background {
   --dot-a: 18%;
-  /* chhoto dot er opacity */
+
   --dot-b: 30%;
-  /* boro accent dot er opacity */
+
   --glow: 10%;
-  /* aurora er opacity */
+
   --shine: 55%;
-  /* ripple e dot er opacity */
+ 
   position: fixed;
   inset: 0;
   z-index: -10;
@@ -359,6 +359,130 @@ button {
     radial-gradient(circle, color-mix(in srgb, var(--brand-from) var(--dot-a), transparent) 1.5px, transparent 1.5px);
   background-size: 112px 112px, 28px 28px;
   background-position: 14px 14px, 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
+}
+
+
+.fixed-dotted-background::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 35% at 25% 30%, color-mix(in srgb, var(--brand-from) var(--glow), transparent), transparent 70%),
+    radial-gradient(35% 40% at 75% 70%, color-mix(in srgb, var(--brand-to, var(--brand-from)) var(--glow), transparent), transparent 70%);
+  filter: blur(40px);
+  animation: dotbg-float 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+
+.fixed-dotted-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--brand-from) var(--shine), transparent) 1.8px, transparent 1.8px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(circle at 50% 42%,
+      transparent calc(var(--r) - 200px), #000 calc(var(--r) - 14px), transparent calc(var(--r) + 14px));
+  mask-image: radial-gradient(circle at 50% 42%,
+      transparent calc(var(--r) - 200px), #000 calc(var(--r) - 14px), transparent calc(var(--r) + 14px));
+  animation: dotbg-ripple 12s cubic-bezier(0.3, 0.1, 0.5, 1) infinite;
+}
+
+@property --r {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+
+@supports (animation-timeline: scroll()) {
+  .fixed-dotted-background::before {
+    animation: dotbg-scroll linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes dotbg-float {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(3%, 3%, 0) scale(1.08);
+  }
+}
+
+@keyframes dotbg-ripple {
+  0% {
+    --r: 0px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0.8;
+  }
+
+  100% {
+    --r: 900px;
+    opacity: 0;
+  }
+}
+
+@keyframes dotbg-scroll {
+  from {
+    transform: translate3d(-6%, -4%, 0) rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(6%, 6%, 0) rotate(25deg) scale(1.15);
+  }
+}
+
+
+.dark .fixed-dotted-background {
+  --dot-a: 28%;
+  --dot-b: 42%;
+  --glow: 16%;
+  --shine: 75%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fixed-dotted-background::before,
+  .fixed-dotted-background::after {
+    animation: none;
+  }
+}  */
+
+
+/* ============================================================
+   Fourth -----  GLOBAL FIXED DOTTED BACKGROUND — v3
+   1. base      : dot grid (shob dot ek size)
+   2. ::before  : aurora glow — scroll korle nore (na hole dhire bhashe)
+   3. ::after   : sonar ripple — kendro theke ek ta dheu ber hoy,
+                  dheu er upor diye jawar somoy dot gulo ujjol hoy
+   --brand-to optional: na thakle --brand-from diye-i chole.
+   ============================================================ */
+.fixed-dotted-background {
+  --dot-a: 18%;
+  /* dot er opacity */
+  --glow: 10%;
+  /* aurora er opacity */
+  --shine: 55%;
+  /* ripple e dot er opacity */
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--brand-from) var(--dot-a), transparent) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
   -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
   mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 30%, transparent 100%);
 }
@@ -447,7 +571,6 @@ button {
 /* dark mode */
 .dark .fixed-dotted-background {
   --dot-a: 28%;
-  --dot-b: 42%;
   --glow: 16%;
   --shine: 75%;
 }
@@ -459,6 +582,18 @@ button {
     animation: none;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============================================================
    SHARED BUTTON SHINE SWEEP EFFECT
