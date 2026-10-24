@@ -26,27 +26,27 @@ export const metadata: Metadata = buildMetadata({
 const steps = [
   {
     step: "01",
-    title: "Honest review",
+    title: "We listen first",
     description:
-      "We look at your current website and say plainly what works, where guests are dropping off, and exactly what we would fix first. No sales jargon or aggressive pitches.",
+      "We look at your situation, your site if you have one, and what you are trying to achieve. No assumptions, no templates.",
   },
   {
     step: "02",
-    title: "One focused improvement",
+    title: "We tell you the truth",
     description:
-      "Instead of forcing a costly, multi-month rebuild, we design and launch a single high-impact change—like an instant mobile menu or a frictionless table reservation flow.",
+      "We say plainly what we think would help and what would not. If we are not the right fit, we will tell you that too.",
   },
   {
     step: "03",
-    title: "Track one agreed number",
+    title: "We agree before we start",
     description:
-      "We pick one metric that actually matters to your dining room—such as reservation clicks, takeout orders, or phone inquiries—and track how the update performs.",
+      "Scope, price and timeline are agreed upfront. Nothing starts until you are comfortable with the plan.",
   },
   {
     step: "04",
-    title: "You decide with zero lock-in",
+    title: "We deliver and stay honest",
     description:
-      "You evaluate the results firsthand with real guests. If you love the difference, we continue supporting you. If you don't, you walk away with zero obligations.",
+      "We build, launch and check in. If something is not right, we fix it. No chasing, no excuses.",
   },
 ];
 
@@ -225,19 +225,20 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <FadeIn>
-              <SectionLabel>Our Approach</SectionLabel>
+              <SectionLabel>How We Work</SectionLabel>
               <h2
                 id="how-we-work-heading"
                 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl"
               >
-                An honest process with{" "}
+                Simple,{" "}
                 <span className="box-decoration-clone bg-gradient-to-r from-[#25CCEF] to-accent bg-clip-text text-transparent pb-0.5">
-                  zero pressure.
-                </span>
+                  honest,
+                </span>{" "}
+                no surprises.
               </h2>
               <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-                We believe in simple communication, plain recommendations, and
-                respecting your time as a restaurant owner.
+                Every project starts the same way &mdash; with a straight
+                conversation about what you actually need.
               </p>
             </FadeIn>
           </div>
