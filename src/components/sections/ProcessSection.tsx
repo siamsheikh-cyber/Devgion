@@ -179,7 +179,7 @@ function PathCard({
         <div
           role="button"
           tabIndex={isFlipped ? -1 : 0}
-          aria-hidden={isFlipped}
+          aria-hidden={isFlipped ? true : undefined}
           onClick={() => setIsFlipped(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -219,7 +219,7 @@ function PathCard({
 
         {/* ── BACK SIDE ── */}
         <div
-          aria-hidden={!isFlipped}
+          aria-hidden={!isFlipped ? true : undefined}
           className={cn(
             "col-start-1 row-start-1 flex flex-col justify-between h-full w-full rounded-2xl border border-border bg-card p-6 shadow-xs sm:p-8 [backface-visibility:hidden] [webkit-backface-visibility:hidden]",
             !isFlipped && "pointer-events-none select-none"
@@ -261,6 +261,7 @@ function PathCard({
           <div className="mt-6 flex flex-col items-center">
             <Link
               href={href}
+              tabIndex={isFlipped ? 0 : -1}
               onClick={(e) => e.stopPropagation()}
               className="group/btn relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3D78FB] to-[#7555EE] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
@@ -273,6 +274,7 @@ function PathCard({
             </p>
             <button
               type="button"
+              tabIndex={isFlipped ? 0 : -1}
               onClick={(e) => {
                 e.stopPropagation();
                 setIsFlipped(false);
