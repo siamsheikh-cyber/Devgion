@@ -84,32 +84,32 @@ function FlowDiagram({
       </div>
 
       {/* Vertical line down */}
-      <div className="w-px h-7 sm:h-9 bg-border/80" />
+      <div className="w-px h-14 sm:h-16 md:h-9 bg-border/80" />
 
       {/* Horizontal split line */}
-      <div className="relative w-3/4 max-w-[240px] h-4 sm:h-5">
+      <div className="relative w-3/4 max-w-[240px] h-6 sm:h-7 md:h-5">
         <div className="absolute inset-x-0 top-0 h-px bg-border/80" />
-        <div className="absolute left-0 top-0 w-px h-4 sm:h-5 bg-border/80" />
-        <div className="absolute right-0 top-0 w-px h-4 sm:h-5 bg-border/80" />
+        <div className="absolute left-0 top-0 w-px h-6 sm:h-7 md:h-5 bg-border/80" />
+        <div className="absolute right-0 top-0 w-px h-6 sm:h-7 md:h-5 bg-border/80" />
       </div>
 
       {/* Two branches */}
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-[380px] mt-2 sm:mt-3">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-[380px] mt-4 sm:mt-5 md:mt-3">
         {/* Left branch */}
         <div className="flex flex-col items-center">
           <span className="text-center font-heading text-xs sm:text-sm font-bold bg-gradient-to-r from-[#3D78FB] to-[#7555EE] bg-clip-text text-transparent pb-0.5">
             {leftBranch.label}
           </span>
-          <div className="flex flex-col items-center my-3 sm:my-4">
-            <div className="w-px h-6 sm:h-8 bg-border/80" />
-            <ArrowDown className="size-3 text-muted-foreground/60 -mt-0.5" />
+          <div className="flex flex-col items-center my-7 sm:my-8 md:my-4">
+            <div className="w-px h-14 sm:h-16 md:h-8 bg-border/80" />
+            <ArrowDown className="size-3.5 text-muted-foreground/60 -mt-0.5" />
           </div>
           <div className="w-full rounded-xl border border-border/70 bg-muted/40 dark:bg-muted/15 p-2 sm:p-2.5 text-center text-xs font-medium text-foreground shadow-2xs">
             {leftBranch.step1}
           </div>
-          <div className="flex flex-col items-center my-3 sm:my-4">
-            <div className="w-px h-6 sm:h-8 bg-border/80" />
-            <ArrowDown className="size-3 text-muted-foreground/60 -mt-0.5" />
+          <div className="flex flex-col items-center my-7 sm:my-8 md:my-4">
+            <div className="w-px h-14 sm:h-16 md:h-8 bg-border/80" />
+            <ArrowDown className="size-3.5 text-muted-foreground/60 -mt-0.5" />
           </div>
           <div className="w-full rounded-xl border border-border/70 bg-muted/20 p-2 sm:p-2.5 text-center text-[11px] sm:text-xs font-semibold text-muted-foreground shadow-2xs">
             {leftBranch.step2}
@@ -121,16 +121,16 @@ function FlowDiagram({
           <span className="text-center font-heading text-xs sm:text-sm font-bold bg-gradient-to-r from-[#3D78FB] to-[#7555EE] bg-clip-text text-transparent pb-0.5">
             {rightBranch.label}
           </span>
-          <div className="flex flex-col items-center my-3 sm:my-4">
-            <div className="w-px h-6 sm:h-8 bg-border/80" />
-            <ArrowDown className="size-3 text-muted-foreground/60 -mt-0.5" />
+          <div className="flex flex-col items-center my-7 sm:my-8 md:my-4">
+            <div className="w-px h-14 sm:h-16 md:h-8 bg-border/80" />
+            <ArrowDown className="size-3.5 text-muted-foreground/60 -mt-0.5" />
           </div>
           <div className="w-full rounded-xl border border-border/70 bg-muted/40 dark:bg-muted/15 p-2 sm:p-2.5 text-center text-xs font-medium text-foreground shadow-2xs">
             {rightBranch.step1}
           </div>
-          <div className="flex flex-col items-center my-3 sm:my-4">
-            <div className="w-px h-6 sm:h-8 bg-border/80" />
-            <ArrowDown className="size-3 text-muted-foreground/60 -mt-0.5" />
+          <div className="flex flex-col items-center my-7 sm:my-8 md:my-4">
+            <div className="w-px h-14 sm:h-16 md:h-8 bg-border/80" />
+            <ArrowDown className="size-3.5 text-muted-foreground/60 -mt-0.5" />
           </div>
           <div className="w-full rounded-xl border border-border/70 bg-muted/20 p-2 sm:p-2.5 text-center text-[11px] sm:text-xs font-semibold text-muted-foreground shadow-2xs">
             {rightBranch.step2}
@@ -201,7 +201,7 @@ function PathCard({
           <FlowDiagram leftBranch={leftBranch} rightBranch={rightBranch} />
 
           {/* Bottom tag pill & CTA */}
-          <div className="mt-8 sm:mt-12 flex flex-col items-center">
+          <div className="mt-12 sm:mt-16 md:mt-12 flex flex-col items-center">
             {/* Tag pill in brand gradient border */}
             <div className="inline-flex w-fit items-center rounded-full p-[1px] bg-gradient-to-r from-[#3D78FB] to-[#7555EE] mb-4 sm:mb-5">
               <span className="rounded-full bg-card px-3 py-1 text-xs font-semibold text-primary">
