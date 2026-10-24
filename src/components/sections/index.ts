@@ -1,7 +1,7 @@
 export { HeroSection } from "./HeroSection";
 export { ProblemSection } from "./ProblemSection";
 export { ServicesSection } from "./ServicesSection";
-export { HowItWorksSection } from "./HowItWorksSection";
+export { ProcessSection } from "./ProcessSection";
 export { WorkSection } from "./WorkSection";
 export { WhyUsSection } from "./WhyUsSection";
 export { StatsSection } from "./StatsSection";

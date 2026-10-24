@@ -3,7 +3,7 @@ import {
   HeroSection,
   ProblemSection,
   ServicesSection,
-  HowItWorksSection,
+  ProcessSection,
   WorkSection,
   WhyUsSection,
   StatsSection,
@@ -73,8 +73,8 @@ export default function HomePage() {
       {/* 3. Services */}
       <ServicesSection />
 
-      {/* 4. How the free 7-day test works */}
-      <HowItWorksSection />
+      {/* 4. Two paths: how we work */}
+      <ProcessSection />
 
       {/* 5. Our Work */}
       <WorkSection />
