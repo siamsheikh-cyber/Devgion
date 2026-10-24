@@ -17,7 +17,8 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate -mt-16 flex min-h-svh flex-col overflow-hidden bg-background pt-16"
+      className="relative isolate -mt-16 flex min-h-svh w-full flex-col overflow-hidden bg-background pt-16"
+      style={{ width: "100%", overflow: "hidden" }}
     >
       {/* ============================================================
           FULL-BLEED BACKGROUND IMAGE (Client animation component)

@@ -27,7 +27,7 @@ export function FaqSection() {
         </div>
 
         <FadeIn delay={0.2} className="mx-auto mt-12 max-w-3xl">
-          <Accordion items={faqItems} />
+          <Accordion items={faqItems} allowMultiple />
         </FadeIn>
       </Container>
     </section>

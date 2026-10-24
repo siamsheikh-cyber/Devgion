@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
  * Renders link groups from siteConfig, social links, and copyright.
  */
 /** Copyright year — update this each January. */
-const CURRENT_YEAR = 2025; // TODO: automate annual update
+const CURRENT_YEAR = 2026;
 
 export function Footer() {
   return (

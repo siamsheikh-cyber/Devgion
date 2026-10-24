@@ -25,7 +25,7 @@ interface AccordionProps {
  */
 export function Accordion({
   items,
-  allowMultiple = false,
+  allowMultiple = true,
   className,
 }: AccordionProps) {
   // Store array of open indices (first item open by default for immediate preview)
@@ -57,7 +57,14 @@ export function Accordion({
                 id={headerId}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                onClick={() => toggleIndex(index)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Prevent mobile browsers from triggering auto-scroll or focus-jump
+                  if (e.detail !== 0) {
+                    e.currentTarget.blur();
+                  }
+                  toggleIndex(index);
+                }}
                 className={cn(
                   "flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-foreground transition-colors",
                   "hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset",
