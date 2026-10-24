@@ -97,7 +97,7 @@ function FlowDiagram({
       <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-[380px] mt-4 sm:mt-5 md:mt-3">
         {/* Left branch */}
         <div className="flex flex-col items-center">
-          <span className="text-center font-heading text-xs sm:text-sm font-bold bg-gradient-to-r from-[#3D78FB] to-[#7555EE] bg-clip-text text-transparent pb-0.5">
+          <span className="text-center font-heading text-xs sm:text-sm font-bold bg-gradient-to-r from-[#3D78FB] to-[#7756ee] bg-clip-text text-transparent pb-0.5">
             {leftBranch.label}
           </span>
           <div className="flex flex-col items-center my-7 sm:my-8 md:my-4">
