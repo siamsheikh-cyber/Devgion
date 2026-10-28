@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Accordion } from "@/components/ui/Accordion";
 import { faqItems } from "@/data/faq";
 
-const subheading = "Everything you need to know about our work and the free 7-day test.";
+const subheading = "Everything you need to know about our work and the free 3-day design update.";
 
 export function FaqSection() {
   return (

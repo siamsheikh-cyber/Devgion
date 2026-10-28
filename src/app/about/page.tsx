@@ -431,7 +431,7 @@ export default function AboutPage() {
               <div className="mx-auto max-w-2xl">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   <Sparkles className="size-3.5" />
-                  <span>Honest Feedback · No Lock-in</span>
+                  <span>3-Day Free Update · No Lock-in</span>
                 </span>
 
                 <h2
@@ -445,9 +445,9 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Tell us what you serve, what is frustrating you about your
-                  current website, and what you want to achieve. We&apos;ll give you
-                  plain, honest advice with zero sales pressure.
+                  Tell us what you serve and what you want to achieve. We can
+                  update one page of your site over 3 days for free—if you love it,
+                  we continue with the full project. If not, you owe us nothing.
                 </p>
 
                 <div className="mt-8 flex justify-center">
@@ -456,7 +456,7 @@ export default function AboutPage() {
                     className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3D78FB] to-[#7555EE] px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <ButtonShine />
-                    <span>Get in Touch</span>
+                    <span>Claim Free 3-Day Update</span>
                     <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Link>
                 </div>

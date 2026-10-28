@@ -74,7 +74,8 @@ export default function WorkPage() {
             </span>
           </>
         }
-        subheading="Every project starts with an honest look at your current site. No pitch, no pressure."
+        subheading="Claim a 3-day free design update on one page of your site. We'll share what we changed and why over WhatsApp or email with zero obligation."
+        buttonText="Get a Free 3-Day Update"
       />
     </div>
   );

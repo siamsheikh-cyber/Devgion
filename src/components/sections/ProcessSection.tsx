@@ -20,22 +20,22 @@ const card1Steps: StepCard[] = [
   {
     step: "STEP 01",
     title: "Honest review",
-    desc: "We look at your current website and say plainly what works, where guests are dropping off, and exactly what we would fix first. No sales pitch.",
+    desc: "We look at your website and pick one key page together—such as your homepage—where a design refresh will have the biggest impact.",
   },
   {
     step: "STEP 02",
-    title: "One focused improvement",
-    desc: "We design and launch a single high-impact change, such as a mobile menu fix or a reservation flow, and nothing else.",
+    title: "3-day page update",
+    desc: "We redesign that page from scratch to elevate visual appeal, menu navigation, and mobile ordering—completely free of charge.",
   },
   {
     step: "STEP 03",
-    title: "Track one agreed number",
-    desc: "We pick one metric that matters, such as reservation clicks or phone taps, and track how the update performs over 7 days.",
+    title: "Walkthrough & rationale",
+    desc: "After 3 days, we share what we changed and why over WhatsApp or email, walking you through every improvement with full context.",
   },
   {
     step: "STEP 04",
     title: "You decide, zero lock-in",
-    desc: "You see the results firsthand. Love the difference? Continue from $300. Don't? You walk away with zero obligations.",
+    desc: "If you love the new look, we continue with the full project from $300. If not, you walk away owing us nothing.",
   },
 ];
 
@@ -359,12 +359,12 @@ export function ProcessSection() {
               tag="Risk-Free Redesign"
               leftBranch={{
                 label: "Have a website",
-                step1: "7-day free test",
+                step1: "3-day free update",
                 step2: "From $300",
               }}
               steps={card1Steps}
-              ctaText="Start the free test"
-              pricingNote="Free for 7 days · Full redesign from $300"
+              ctaText="Start free design update"
+              pricingNote="Free for 3 days · Full redesign from $300"
               href="/contact"
             />
           </FadeIn>

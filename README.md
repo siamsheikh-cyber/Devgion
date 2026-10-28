@@ -57,7 +57,7 @@ src/
     services/page.tsx       Services page
     work/page.tsx           Portfolio page
     about/page.tsx          About page
-    contact/page.tsx        Contact / free test site CTA page
+    contact/page.tsx        Contact / free design update CTA page
     not-found.tsx           Custom 404
     error.tsx               Global error boundary
     loading.tsx             Global loading UI

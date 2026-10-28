@@ -60,7 +60,7 @@ export interface ProblemPoint {
   icon: string;
 }
 
-/** Step in the 7-day test process */
+/** Step in the 3-day design update process */
 export interface TestStep {
   step: number;
   title: string;

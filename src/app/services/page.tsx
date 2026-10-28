@@ -85,9 +85,9 @@ const startSteps = [
   },
   {
     step: "03",
-    title: "We agree on the first fix",
+    title: "3-day free design update",
     description:
-      "We agree on a single, focused improvement—such as a faster mobile menu or seamless reservation flow—and build it for you to see firsthand.",
+      "We update one page (like your homepage) at zero cost. After 3 days, we share what changed and why over WhatsApp or email. If you love it, we continue. If not, you owe us nothing.",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function ServicesPage() {
                       className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3D78FB] to-[#7555EE] px-7 py-3.5 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     >
                       <ButtonShine />
-                      <span>Get a Free 7-Day Test</span>
+                      <span>Get a Free 3-Day Design Update</span>
                       <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -419,8 +419,8 @@ export default function ServicesPage() {
             </span>
           </>
         }
-        subheading="Send us your restaurant's website for an honest, plain-English assessment. We'll tell you what we would fix first with zero pitch and zero pressure."
-        buttonText="Get a Free Assessment"
+        subheading="Send us your restaurant's website to claim a 3-day free design update on one page. After 3 days, we share what changed and why over WhatsApp or email—no pitch, no pressure."
+        buttonText="Get a Free 3-Day Update"
       />
     </div>
   );

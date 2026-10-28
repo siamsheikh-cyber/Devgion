@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Devgion",
   tagline: "Websites That Fill Tables",
   description:
-    "Devgion is a web studio that designs and redesigns websites for restaurants and cafes — built for conversions, speed, and local SEO. Get a free 7-day test site today.",
+    "Devgion is a web studio that designs and redesigns websites for restaurants and cafes — built for conversions, speed, and local SEO. Try our free 3-day design update today.",
   /** Set NEXT_PUBLIC_SITE_URL in .env.local for production */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://devgion.com", // TODO: confirm final domain
 

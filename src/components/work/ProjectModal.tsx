@@ -286,7 +286,7 @@ export function ProjectModal({ project }: ProjectModalProps) {
               className="group relative overflow-hidden inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-primary/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <ButtonShine />
-              <span>Get a free 7-day test</span>
+              <span>Get a free 3-day design update</span>
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>

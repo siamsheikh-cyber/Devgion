@@ -19,7 +19,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Websites That Fill Tables — Restaurant & Cafe Web Design",
   description:
-    "We design and redesign restaurant and cafe websites so guests can find your menu, book a table and order in a few taps. Get a free 7-day test today.",
+    "We design and redesign restaurant and cafe websites so guests can find your menu, book a table and order in a few taps. Claim your free 3-day design update today.",
   path: "",
 });
 

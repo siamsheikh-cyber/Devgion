@@ -12,8 +12,9 @@ interface CtaSectionProps {
   buttonHref?: string;
 }
 
-const defaultSubheading = "We will tell you honestly what we would fix first.";
-const defaultButtonText = "Get a Free Audit";
+const defaultSubheading =
+  "Try our 3-day free design update on one page of your site. We share what we changed and why over WhatsApp or email—if you love it, we continue; if not, you owe us nothing.";
+const defaultButtonText = "Get a Free 3-Day Update";
 const defaultButtonHref = "/contact";
 
 export function CtaSection({

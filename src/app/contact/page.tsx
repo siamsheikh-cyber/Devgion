@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Contact & Booking",
   description:
-    "Get in touch with Devgion or book a free 30-minute intro call. Claim your free 7-day restaurant website test with zero obligation.",
+    "Get in touch with Devgion or book a free 30-minute intro call. Claim your free 3-day restaurant website design update with zero obligation.",
   path: "/contact",
 });
 
@@ -33,8 +33,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Book a free 30-minute intro call or send us a message below. We will review
-              your current site and respond within 24 hours.
+              Book a free 30-minute intro call or send us a message below to request your free
+              3-day design update. We will review your current site and respond within 24 hours.
             </p>
           </div>
 
