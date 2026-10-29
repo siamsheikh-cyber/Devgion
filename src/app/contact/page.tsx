@@ -66,7 +66,7 @@ export default function ContactPage() {
                       Address
                     </p>
                     <p className="mt-0.5 font-medium text-foreground">
-                      Tikatoli, Dhaka, Bangladesh
+                      Tongi, Gazipur, Bangladesh
                     </p>
                   </div>
                 </div>
